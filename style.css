@@ -1,0 +1,129 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff0f5; /* Rosa clarinho */
+    color: #5d4037;
+    margin: 0;
+}
+
+header {
+    background-color: #ffb6c1; /* Rosa pastel */
+    padding: 30px;
+    text-align: center;
+    border-bottom: 5px solid #ff69b4;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #ff69b4;
+    margin-bottom: 20px;
+}
+
+/* --- BARRA DE BUSCA --- */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 280px;
+    border-radius: 20px;
+    border: 2px solid #ffb6c1;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 25px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #ff1493;
+    transform: translateY(-2px);
+}
+
+/* --- CONTAINER DOS CARDS (GRID RESPONSIVO) --- */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    justify-content: center;
+}
+
+/* --- ESTILO DO CARD --- */
+.movie-card {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.2);
+    border: 2px solid #ffe4e1;
+    display: flex;
+    flex-direction: column;
+    height: 650px; /* Mantém todos os cards com o mesmo tamanho */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.movie-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+    border-color: #ffb6c1;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- INFORMAÇÕES DO FILME --- */
+.movie-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden; /
+}
+
+.movie-info h3 {
+    color: #ff69b4;
+    margin: 0 0 10px 0;
+}
+
+.nota {
+    color: #ff4500;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+/* --- SINOPSE COM ROLAGEM FOFA --- */
+.sinopse {
+    color: #8b7d7b;
+    font-size: 0.85rem;
+    overflow-y: auto; /* Cria a rolagem interna */
+    padding-right: 5px;
+    text-align: left;
+}
+
+/* Customização da barra de rolagem */
+.sinopse::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sinopse::-webkit-scrollbar-thumb {
+    background: #ffb6c1;
+    border-radius: 10px;
+}
+
+.sinopse::-webkit-scrollbar-track {
+    background: #fff0f5;
+}
