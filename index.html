@@ -8,15 +8,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <body>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">✕</button>
+        <h3 style="text-align: center; color: white; margin-top: 20px;"></h3>
+        <hr style="border: 1px solid #ff69b4; margin: 10px 20px;">
+        <a href="#" onclick="filtrarPorGenero(10749, '💕 Filmes de Romance')">Romance</a>
+        <a href="#" onclick="filtrarPorGenero(35, '😂 Filmes de Comédia')">Comédia</a>
+        <a href="#" onclick="filtrarPorGenero(28, '🍿 Filmes de Ação')">Ação</a>
+        <a href="#" onclick="filtrarPorGenero(27, '👻 Filmes de Terror')">Terror</a>
+    </div>
+
+    <button class="open-menu-btn" onclick="toggleSidebar()">☰ Categorias</button>
+
     <header>
         <h1>Catálogo de Filmes</h1>
         <div class="search-box">
-            <input type="text" id="busca" placeholder="Pesquisar filmes...">
-            <button onclick="buscarFilmes()">Buscar</button>
+            <input type="text" id="busca" onkeyup="buscarFilmes()" placeholder="Pesquisar filmes...">
         </div>
     </header>
 
-    <main id="lista-filmes" class="container"></main>
+    <div class="hero-banner" id="hero-banner">
+        <div class="hero-content">
+            <h2 id="hero-title">Carregando Destaque...</h2>
+            <p id="hero-overview">Buscando o melhor filme para você hoje...</p>
+            <button id="hero-fav-btn" class="fav-btn" style="width: auto; padding: 10px 25px;">❤️ Favoritar Destaque</button>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="movie-section" id="section-busca" style="display: none;">
+            <h2 id="titulo-busca">🔍 Resultados</h2>
+            <div class="carousel-container">
+                <button class="arrow-btn left-arrow" onclick="scrollCarousel('resultado-busca', -300)">&#10094;</button>
+                <div class="movie-carousel" id="resultado-busca"></div>
+                <button class="arrow-btn right-arrow" onclick="scrollCarousel('resultado-busca', 300)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>💕 Filmes de Romance</h2>
+            <div class="carousel-container">
+                <button class="arrow-btn left-arrow" onclick="scrollCarousel('romance-list', -300)">&#10094;</button>
+                <div class="movie-carousel" id="romance-list"></div>
+                <button class="arrow-btn right-arrow" onclick="scrollCarousel('romance-list', 300)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>😂 Filmes de Comédia</h2>
+            <div class="carousel-container">
+                <button class="arrow-btn left-arrow" onclick="scrollCarousel('comedia-list', -300)">&#10094;</button>
+                <div class="movie-carousel" id="comedia-list"></div>
+                <button class="arrow-btn right-arrow" onclick="scrollCarousel('comedia-list', 300)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>⭐ Meus Favoritos (Salvos no Firebase)</h2>
+            <div class="carousel-container">
+                <button class="arrow-btn left-arrow" onclick="scrollCarousel('favoritos-list', -300)">&#10094;</button>
+                <div class="movie-carousel" id="favoritos-list"></div>
+                <button class="arrow-btn right-arrow" onclick="scrollCarousel('favoritos-list', 300)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
     <script src="script.js"></script>
 </body>
