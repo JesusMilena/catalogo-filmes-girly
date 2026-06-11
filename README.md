@@ -59,5 +59,3 @@ Passo 4: Abra o arquivo 'index.html' diretamente em seu navegador de
 * Etapa 4: Documentação técnica (Relatório PDF) e publicação no GitHub Pages
 
 ========================================================================
-Documento gerado para a entrega do CheckPoint 3 - Desenvolvimento Web III
-========================================================================
